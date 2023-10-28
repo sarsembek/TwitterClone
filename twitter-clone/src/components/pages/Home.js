@@ -1,41 +1,66 @@
-import React from "react";
-import { useState } from "react";
-import { Content } from "../content/Content";
-import { Button, Input } from "antd";
-import posts from '../content/Content';
+import React, { useState } from 'react';
+import { List } from 'antd';
 
 export const HomePage = () => {
-    const [postText, setPostText] = useState('');
 
-    const handleInputChange = (e) => {
-        setPostText(e.target.value);
+  const [newPostContent, setNewPostContent] = useState('');
+
+
+  const [posts, setPosts] = useState([
+    { id: 1, content: 'Content for Post 1' },
+    { id: 2, content: 'Content for Post 2' },
+  ]);
+
+
+  const handleInputChange = (e) => {
+    setNewPostContent(e.target.value);
+  };
+
+
+  const handleAddPost = () => {
+    if (newPostContent.trim() !== '') {
+
+      const newPost = {
+        id: posts.length + 1,
+        content: newPostContent,
       };
-    
-    const handleSubmit = (e) => {
-      e.preventDefault();
-      const post = {
-        title: 'Post 1',
-        content: e,
-        author: 'Author 1',
-        date: '2023-10-28',
-        tags: ['Tag1', 'Tag2']
-      }
-      posts.push(post)
-      // You can add your logic here to handle the submitted post, e.g., send it to a server, update state, etc.
-      console.log('Submitted Post:', postText);
-      // Clear the input after submission
-      setPostText('');
-      
-    };
-    return (
-        <>
-        <div>
-            <Input />
-            <Button onClick={handleSubmit} onChange={handleInputChange}>Submit</Button>
-        </div>
-        <Content />
-        </>
-    )
-}
+
+      setPosts([...posts, newPost]);
+
+      setNewPostContent('');
+    }
+  };
+
+  return (
+    <div>
+      <h2>Create a New Post</h2>
+      <div>
+        <input
+          type="text"
+          placeholder="Enter your post content"
+          value={newPostContent}
+          onChange={handleInputChange}
+        />
+        <button onClick={handleAddPost}>Add Post</button>
+      </div>
+
+      <List
+        id="list"
+        header="Posts"
+        itemLayout="horizontal"
+        dataSource={posts}
+        renderItem={(item) => (
+          <List.Item>
+            <List.Item.Meta
+                title={<p>{item.title}</p>}
+                description={<p>{item.content}</p>}
+                
+            />
+          </List.Item>
+        )}
+    />
+    </div>
+  );
+};
 
 export default HomePage;
