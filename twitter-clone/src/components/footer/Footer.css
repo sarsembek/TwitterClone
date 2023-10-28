@@ -1,0 +1,65 @@
+.footer {
+  background: linear-gradient(0deg, rgba(0,223,162,1) 0%, rgba(2,0,36,1) 100%);
+  padding: 1rem;
+  border-radius: 5% 5% 25% 25% / 10% 10% 0% 0%;
+}
+
+.footer-logo {
+  width: min-content;
+  margin: 0 auto 1rem;
+  background: rgba(199, 249, 204, 0.28);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(199, 249, 204, 0.3);
+  transition: 0.3s ease-in-out;
+}
+
+.footer-logo:hover {
+  box-shadow: 0 0 5px #80ED99;
+  transform: scale(1.1);
+}
+
+#logo {
+  width: 5rem;
+  padding: 0.5rem;
+}
+
+.footer-section {
+  margin-bottom: 20px;
+}
+
+.footer-section h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.footer-section ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer-section li {
+  margin-bottom: 5px;
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #38A3A5;
+  text-decoration: underline;
+  transition: color 0.2s ease-in-out;
+}
+
+.card {
+  background: rgba(199, 249, 204, 0.73);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(199, 249, 204, 0.3);
+}

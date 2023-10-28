@@ -1,0 +1,38 @@
+.logo {
+    width: 3rem;
+    margin-top: 0.75rem;
+    
+}
+
+.app-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background: linear-gradient(90deg, rgba(0,223,162,1) 0%, rgba(2,0,36,1) 100%);
+    border-radius: 25% 25% 5% 5% /  0% 0% 10% 10%;
+}
+
+.reg-block {
+    display: flex;
+    right: 0rem;
+    justify-content: space-between;
+}
+
+#reg {
+    transition: 0.3s ease;
+}
+
+#log {
+    transition: 0.3s ease;
+}
+
+#reg:hover {
+    color: #27d7e1;
+    border-color: #27d7e1;
+    transform: scale(1.1);
+}
+
+#log:hover {
+    transform: scale(1.1);
+}
